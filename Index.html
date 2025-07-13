@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanban Board - Platform Launch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="dark">
+  <div class="sidebar" id="sidebar">
+    <div>
+      <div class="logo">📋 Kanban</div>
+      <div class="all-boards">All Boards (8)</div>
+      <div class="boards">
+        <div class="board active">📁 Platform Launch</div>
+        <div class="board">📁 Marketing Plan</div>
+        <div class="board">📁 Roadmap</div>
+        <div class="board">➕ Create New Board</div>
+      </div>
+    </div>
+    <div>
+      <div class="toggle">
+        ☀️
+        <div class="theme-switch" onclick="toggleTheme()"></div>
+        🌙
+      </div>
+      <div class="hide-sidebar" onclick="hideSidebar()">👁 Hide Sidebar</div>
+    </div>
+  </div>
+
+  <div class="main" id="main">
+    <div class="topbar-box">
+      <h1>Platform Launch</h1>
+      <div class="task-actions">
+        <button class="add-task-btn" onclick="showModal()">+ Add New Task</button>
+        <div class="menu-dots">⋮</div>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="columns" id="columns">
+        <div class="column" id="todoColumn">
+          <h3><span class="dot todo-dot"></span> TODO (4)</h3>
+          <div class="task"><div class="task-title">Build UI for onboarding flow</div><div class="task-subtasks">0 of 3 subtasks</div></div>
+          <div class="task"><div class="task-title">Build UI for search</div><div class="task-subtasks">0 of 1 subtasks</div></div>
+          <div class="task"><div class="task-title">Build settings UI</div><div class="task-subtasks">0 of 2 subtasks</div></div>
+          <div class="task"><div class="task-title">QA and test all major user journeys</div><div class="task-subtasks">0 of 2 subtasks</div></div>
+        </div>
+
+        <div class="column" id="doingColumn">
+          <h3><span class="dot doing-dot"></span> DOING (6)</h3>
+          <div class="task"><div class="task-title">Design settings and search pages</div><div class="task-subtasks">1 of 3 subtasks</div></div>
+          <div class="task"><div class="task-title">Add account management endpoints</div><div class="task-subtasks">2 of 3 subtasks</div></div>
+          <div class="task"><div class="task-title">Design onboarding flow</div><div class="task-subtasks">1 of 3 subtasks</div></div>
+          <div class="task"><div class="task-title">Add search endpoints</div><div class="task-subtasks">1 of 2 subtasks</div></div>
+          <div class="task"><div class="task-title">Add authentication endpoints</div><div class="task-subtasks">1 of 2 subtasks</div></div>
+          <div class="task"><div class="task-title">Research pricing points of various competitors and trial different business models</div><div class="task-subtasks">1 of 3 subtasks</div></div>
+        </div>
+
+        <div class="column" id="doneColumn">
+          <h3><span class="dot done-dot"></span> DONE (7)</h3>
+          <div class="task"><div class="task-title">Conduct 5 wireframe tests</div><div class="task-subtasks">1 of 1 subtasks</div></div>
+          <div class="task"><div class="task-title">Create wireframe prototype</div><div class="task-subtasks">1 of 1 subtasks</div></div>
+          <div class="task"><div class="task-title">Review results of usability tests and iterate</div><div class="task-subtasks">3 of 3 subtasks</div></div>
+          <div class="task"><div class="task-title">Create paper prototypes and conduct 10 usability tests with potential customers </div><div class="task-subtasks">2 of 2 subtasks</div></div>
+          <div class="task"><div class="task-title">Market discovery</div><div class="task-subtasks">1 of 1 subtasks</div></div>
+          <div class="task"><div class="task-title">Competitor analysis</div><div class="task-subtasks">2 of 2 subtasks</div></div>
+          <div class="task"><div class="task-title">Research the market</div><div class="task-subtasks">2 of 2 subtasks</div></div>
+        </div>
+
+        <div class="column new-column">+ New Column</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="taskModal">
+    <div class="modal-content">
+      <input type="text" id="taskTitle" placeholder="Task Title"/>
+      <input type="text" id="taskSubtasks" placeholder="e.g. 2 of 3 subtasks"/>
+      <select id="taskColumn">
+        <option value="todo">To Do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+      <button onclick="addTask()">Add Task</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
